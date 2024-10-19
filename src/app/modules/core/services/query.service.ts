@@ -17,14 +17,17 @@ export class QueryService {
 
     const wasmFile = '/assets/sql-wasm.wasm';
 
-    const init : Observable<any> = from(initSqlJs({
+    const init$ : Observable<any> = from(initSqlJs({
       locateFile: file => wasmFile
     }));
 
-    return init
+    return init$
       .pipe(
         map((SQL) => new SQL.Database()),
-        tap((db) => {console.log("Initialized db")}),
+        tap((db) => {
+          this.db = db;
+          console.log("Initialized db");
+        }),
         catchError((error) => {
           console.error('Error loading sql.js WASM module:', error);
           return throwError(() => new Error('Failed to load sql.js WASM module'));

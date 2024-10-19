@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { QueryComponent } from './modules/gliese/components/query/query.component';
 
 @Component({
@@ -7,6 +7,7 @@ import { QueryComponent } from './modules/gliese/components/query/query.componen
   standalone: true,
   imports: [
     RouterOutlet,
+    RouterLink,
     QueryComponent
   ],
   templateUrl: './app.component.html',

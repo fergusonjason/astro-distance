@@ -1,7 +1,7 @@
-CREATE SCHEMA IF NOT EXISTS astro;
+--CREATE SCHEMA IF NOT EXISTS astro;
 
-CREATE TABLE IF NOT EXISTS astro.gliese (
-    id integer NOT NULL,
+CREATE TABLE IF NOT EXISTS gliese (
+    id integer PRIMARY KEY,
     name varchar(20),
     component varchar(2),
     ra varchar(12),
@@ -20,9 +20,9 @@ CREATE TABLE IF NOT EXISTS astro.gliese (
     hd_number integer
 );
 
-ALTER TABLE ONLY astro.gliese
-    ADD CONSTRAINT pk_gliese PRIMARY KEY (id);
+-- ALTER TABLE ONLY gliese
+--     ADD CONSTRAINT pk_gliese PRIMARY KEY (id);
 
-CREATE INDEX idx_gliese_name ON astro.gliese USING btree (name);
+CREATE INDEX IF NOT EXISTS idx_gliese_name ON gliese(name);
 
-CREATE INDEX idx_gliese_spectype ON astro.gliese USING btree (spectral_type);
+--CREATE INDEX idx_gliese_spectype ON gliese USING btree (spectral_type);

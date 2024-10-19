@@ -3,9 +3,13 @@ import { QueryComponent } from './modules/gliese/components/query/query.componen
 import { glieseLandingGuard } from './modules/gliese/guards/gliese-landing.guard';
 
 export const routes: Routes = [
+    // {
+    //     path: "",
+    //     redirectTo: "/gliese"
+    // },
     {
         title: "Gliese Catalog",
-        path: "/gliese",
+        path: "gliese",
         component: QueryComponent,
         canActivate: [glieseLandingGuard]
     }
