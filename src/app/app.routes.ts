@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { GlieseSearchComponent } from './modules/gliese/components/gliese-search/gliese-search.component';
 import { HomeComponent } from './modules/home/components/home/home.component';
 import { GlieseDistanceComponent } from './modules/gliese/components/gliese-distance/gliese-distance.component';
+import { glieseInitializedGuard } from './modules/gliese/guards/gliese-initialized.guard';
 
 export const routes: Routes = [
     {
@@ -19,6 +20,7 @@ export const routes: Routes = [
         title: "Gliese Catalog",
         path: "gliese",
         canActivate: [],
+        canActivateChild: [glieseInitializedGuard],
         children: [
             {
                 title: "Search Gliese Catalog",
