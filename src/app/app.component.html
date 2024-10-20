@@ -1,13 +1,6 @@
-<div>
-  <h1>
-    Main page
-  </h1>
-
-  <a>
-    Links
-  </a>
-  <a [routerLink]="['/gliese']" >Gliese Catalog</a>
-  <!--
-  <astro-query></astro-query>
-  -->
-</div>
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" opened>Menu</mat-drawer>
+  <mat-drawer-content>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

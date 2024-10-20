@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { QueryComponent } from './modules/gliese/components/query/query.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +8,7 @@ import { QueryComponent } from './modules/gliese/components/query/query.componen
   imports: [
     RouterOutlet,
     RouterLink,
-    QueryComponent
+    MatSidenavModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
