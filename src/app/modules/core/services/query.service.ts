@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { catchError, from, map, Observable, switchMap, tap, throwError } from 'rxjs';
+import { catchError, from, map, Observable, of, switchMap, tap, throwError } from 'rxjs';
 import initSqlJs, { Database } from 'sql.js';
 //import * as SQL from 'sql.js';
 
@@ -44,6 +44,29 @@ export class QueryService {
         tap((text) => this.db.exec(text))
       );
   }
+
+  query(sql: string) : any {
+
+    return this.db.exec(sql);
+
+  }
+
+  // same as query, but wrapped in an Observable
+  query$(sql: string) : Observable<any> {
+
+    return of(null)
+      .pipe(
+        map(() => this.db.exec(sql))
+      );
+  }
+
+  // queryAsObject(sql: string) : any {
+
+  //   const stmt = this.db.prepare(sql);
+  //   const result : any = stmt.getAsObject();
+
+  //   return result;
+  // }
 
   private callWasmFunction(funcName: string, ...args: any[]): any {
     if (this.wasmInstance && this.wasmInstance.exports[funcName]) {
