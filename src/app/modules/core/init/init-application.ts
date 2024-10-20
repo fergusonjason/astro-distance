@@ -20,4 +20,6 @@ export const initApplication = (): (() => Observable<any>) => {
             tap(() => router.navigateByUrl("/home")),
             map(() => undefined)
         );
+
+    //TODO: close the database on shutdown/reload
 }
