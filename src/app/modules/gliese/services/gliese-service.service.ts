@@ -42,6 +42,7 @@ export class GlieseService {
 
     const test: any = this.queryService.query("SELECT COUNT(*) AS COUNT FROM GLIESE");
     const count : number = countTransformer(test);
+    this.totalCatalogEntries$$.next(count);
 
     return of(undefined);
   }
