@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './modules/home/components/home/home.component';
-import { GlieseHomeComponent } from './modules/gliese/components/gliese-home/gliese-home.component';
 import { GlieseSearchComponent } from './modules/gliese/components/gliese-search/gliese-search.component';
+import { HomeComponent } from './modules/home/components/home/home.component';
+import { GlieseDistanceComponent } from './modules/gliese/components/gliese-distance/gliese-distance.component';
 
 export const routes: Routes = [
     {
@@ -17,13 +17,18 @@ export const routes: Routes = [
     {
         title: "Gliese Catalog",
         path: "gliese",
-        component: GlieseHomeComponent,
+        //component: GlieseHomeComponent,
         canActivate: [],
         children: [
             {
                 title: "Search Gliese Catalog",
                 path: "search",
                 component: GlieseSearchComponent
+            },
+            {
+                title: "Distance Calculator",
+                path: "distanceCalculator",
+                component: GlieseDistanceComponent
             }
         ]
     }
