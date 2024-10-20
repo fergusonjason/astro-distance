@@ -9,6 +9,7 @@ export const routes: Routes = [
         redirectTo: "home",
         pathMatch: "full"
     },
+    // { path: '**', redirectTo: '/home' },
     {
         title: "Home",
         path: "home",
@@ -17,7 +18,6 @@ export const routes: Routes = [
     {
         title: "Gliese Catalog",
         path: "gliese",
-        //component: GlieseHomeComponent,
         canActivate: [],
         children: [
             {
