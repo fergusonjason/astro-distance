@@ -2,11 +2,17 @@
   <mat-sidenav-container >
     <mat-sidenav position="start" [opened]="true" [disableClose]="true" mode="side">
       <div class="menuHeader">
-        Main Menu
+        <h3>Main Menu</h3>
       </div>
       <mat-list role="list">
         <mat-list-item role="listitem"><a routerLink="/home">Home</a></mat-list-item>
-        <mat-list-item role="listitem"><a routerLink="/gliese">Gliese</a></mat-list-item>
+
+          <mat-list role="list">
+            <mat-list-item><b>Gliese Catalog</b></mat-list-item>
+            <mat-list-item role="listitem"><a routerLink="/gliese/search">Catalog Search</a> </mat-list-item>
+            <mat-list-item role="listitem">Distance Search</mat-list-item>
+          </mat-list>
+
       </mat-list>
     </mat-sidenav>
     <section class="appContent">
