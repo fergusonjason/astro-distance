@@ -1,6 +1,16 @@
-<mat-drawer-container class="example-container">
-  <mat-drawer mode="side" opened>Menu</mat-drawer>
-  <mat-drawer-content>
-    <router-outlet></router-outlet>
-  </mat-drawer-content>
-</mat-drawer-container>
+<div>
+  <mat-sidenav-container >
+    <mat-sidenav position="start" [opened]="true" [disableClose]="true" mode="side">
+      <div class="menuHeader">
+        Main Menu
+      </div>
+      <mat-list role="list">
+        <mat-list-item role="listitem"><a routerLink="/home">Home</a></mat-list-item>
+        <mat-list-item role="listitem"><a routerLink="/gliese">Gliese</a></mat-list-item>
+      </mat-list>
+    </mat-sidenav>
+    <section class="appContent">
+      <router-outlet></router-outlet>
+    </section>
+  </mat-sidenav-container>
+</div>
