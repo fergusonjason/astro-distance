@@ -1,0 +1,43 @@
+<div>
+    <p>Distance Calculator: </p>
+    <form [formGroup]="inputForm" (ngSubmit)="calculate()">
+        <table>
+            <tr>
+                <td>
+                    <label for="dist1">First Star Distance</label>
+                    <input type="text" formControlName="dist1">
+                </td>
+                <td>
+                    <label for="dist1">First Star Right Ascension</label>
+                    <input type="text" formControlName="ra1">
+                </td>
+                <td>
+                    <label for="dist1">First Star Declination</label>
+                    <input type="text" formControlName="dec1">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="dist1">Second Star Distance</label>
+                    <input type="text" formControlName="dist2">
+                </td>
+                <td>
+                    <label for="dist1">Second Star Right Ascension</label>
+                    <input type="text" formControlName="ra2">
+                </td>
+                <td>
+                    <label for="dist1">Second Star Declination</label>
+                    <input type="text" formControlName="dec2">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <p>&nbsp;</p>
+
+    
+    @let showResult = (showResult$ | async);
+    @if (showResult$ | async) {
+        <p>Distance from First star to second star: {{ distance$ | async }}</p>
+    }
+</div>
